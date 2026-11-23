@@ -1,0 +1,24 @@
+/* Additions on top of world.css (which stays verbatim from the approved design). */
+
+/* Lead form on the unlock page */
+.leadform{width:100%;max-width:560px;display:grid;gap:16px;text-align:left;background:rgba(18,16,25,.8);border:1px solid rgba(227,173,90,.35);border-radius:18px;padding:28px clamp(18px,4vw,30px)}
+.leadform h3{font-size:24px}
+.choices{border:0;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.choices legend{margin-bottom:10px;padding:0}
+@media (max-width:560px){.choices{grid-template-columns:1fr}}
+.choice{position:relative;cursor:pointer}
+.choice input{position:absolute;opacity:0;pointer-events:none}
+.choice span{display:grid;gap:2px;height:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);font-size:13px;color:var(--ink-soft);transition:border-color .25s,background .25s}
+.choice b{font-size:18px;font-weight:600;color:var(--gold-hot);font-variant-numeric:tabular-nums}
+.choice input:checked+span{border-color:var(--gold);background:rgba(227,173,90,.1);box-shadow:0 0 0 1px var(--gold) inset}
+.choice input:focus-visible+span{outline:2px solid var(--gold-hot);outline-offset:3px}
+.field{display:grid;gap:6px;font-size:13px;color:var(--ink-soft)}
+.field input{font:inherit;font-size:16px;color:var(--ink);background:rgba(8,7,11,.6);border:1px solid var(--line);border-radius:10px;padding:12px 14px;width:100%;min-width:0}
+.field input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(227,173,90,.2)}
+.field input[aria-invalid="true"]{border-color:#e07a6a}
+.leadform .btn{justify-self:start}
+.leadmsg{font-size:14px;min-height:1.7em;color:var(--ink-soft)}
+.leadmsg.ok{color:var(--gold-hot)}
+.leadmsg.err{color:#f0a493}
+.leadform.sent .choices,.leadform.sent .field,.leadform.sent .btn{display:none}
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
